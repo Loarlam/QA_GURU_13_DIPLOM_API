@@ -110,7 +110,7 @@ public class SeveralTestsForReqresAPI extends BaseTest {
         createUserBodyLombokModel.setName(dataForTheTest.userName);
         createUserBodyLombokModel.setJob(dataForTheTest.userJob);
 
-        CreateUserResponseLombokModel createUserResponseLombokModel = given().
+        given().
                 filter(withCustomTemplates()).
                 spec(requestSpecificationCreate)
                 .body(createUserBodyLombokModel)
