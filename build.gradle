@@ -50,7 +50,6 @@ tasks.withType(JavaCompile) {
 }
 
 task taskWithTagReqres(type: Test) {
-    systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags "reqres"
     }

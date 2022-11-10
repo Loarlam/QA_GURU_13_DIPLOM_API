@@ -22,6 +22,7 @@ import static io.restassured.http.ContentType.JSON;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static in.reqres.helpers.CustomApiListener.withCustomTemplates;
 
 
 public class SeveralTestsForReqresAPI extends BaseTest {
@@ -38,6 +39,7 @@ public class SeveralTestsForReqresAPI extends BaseTest {
         createUserBodyPOJOModel.setJob(dataForTheTest.userJob);
 
         CreateUserResponsePOJOModel createUserResponsePOJOModel = given().
+                filter(withCustomTemplates()).
                 contentType(JSON)
                 .body(createUserBodyPOJOModel)
                 .log().all()
@@ -69,6 +71,7 @@ public class SeveralTestsForReqresAPI extends BaseTest {
         updateUserBodyLombokModel.setUpdateJob(dataForTheTest.userJobToUpdate);
 
         CreateUserResponseLombokModel createUserResponseLombokModel = given().
+                filter(withCustomTemplates()).
                 contentType(JSON)
                 .body(createUserBodyLombokModel)
                 .log().all()
@@ -80,6 +83,7 @@ public class SeveralTestsForReqresAPI extends BaseTest {
                 .extract().as(CreateUserResponseLombokModel.class);
 
         UpdateUserResponseLombokModel updateUserResponseLombokModel = given().
+                filter(withCustomTemplates()).
                 contentType(JSON)
                 .body(updateUserBodyLombokModel)
                 .log().all()
@@ -107,6 +111,7 @@ public class SeveralTestsForReqresAPI extends BaseTest {
         createUserBodyLombokModel.setJob(dataForTheTest.userJob);
 
         CreateUserResponseLombokModel createUserResponseLombokModel = given().
+                filter(withCustomTemplates()).
                 spec(requestSpecificationCreate)
                 .body(createUserBodyLombokModel)
                 .when()
