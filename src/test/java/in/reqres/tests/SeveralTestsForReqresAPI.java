@@ -6,6 +6,9 @@ import in.reqres.models.lombok.UpdateUserBodyLombokModel;
 import in.reqres.models.lombok.UpdateUserResponseLombokModel;
 import in.reqres.models.pojo.CreateUserBodyPOJOModel;
 import in.reqres.models.pojo.CreateUserResponsePOJOModel;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -26,6 +29,8 @@ public class SeveralTestsForReqresAPI extends BaseTest {
 
     @Test
     @Tag("reqres")
+    @Owner("Loarlam")
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Создает нового юзера методом /api/users с POJO моделью и проверяет параметры ответа созданного юзера")
     void creatingUserWithPOJO() {
         CreateUserBodyPOJOModel createUserBodyPOJOModel = new CreateUserBodyPOJOModel();
@@ -51,6 +56,8 @@ public class SeveralTestsForReqresAPI extends BaseTest {
 
     @Test
     @Tag("reqres")
+    @Owner("Loarlam")
+    @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Создаёт юзера, затем обновляет информацию по созданному юзеру методом /api/users/{id юзера} с Lombok моделью")
     void updatingUserInfoWithLombok() {
         CreateUserBodyLombokModel createUserBodyLombokModel = new CreateUserBodyLombokModel();
@@ -91,6 +98,8 @@ public class SeveralTestsForReqresAPI extends BaseTest {
 
     @Test
     @Tag("reqres")
+    @Owner("Loarlam")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Создаёт юзера, затем удаляем информацию по юзеру /api/users/{id юзера}")
     void deletingUserWithSpec() {
         CreateUserBodyLombokModel createUserBodyLombokModel = new CreateUserBodyLombokModel();
