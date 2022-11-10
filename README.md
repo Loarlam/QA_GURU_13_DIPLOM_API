@@ -45,7 +45,7 @@
 
 #### Команды для удаленного запуска:
 ```bash
-clean taskWithTagVacancy
+clean taskWithTagReqres
 ```
 
 ## <img width="5%" title="Allure" src="images/logo/allureReport.svg"> Интеграция с Allure report
