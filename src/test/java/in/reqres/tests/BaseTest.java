@@ -4,10 +4,10 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 
 public class BaseTest {
-    DataForTheTest dataForTheTest = new DataForTheTest();
+    static DataForTheTest dataForTheTest = new DataForTheTest();
 
     @BeforeAll
     static void settingURI() {
-        RestAssured.baseURI = "https://reqres.in";
+        RestAssured.baseURI = dataForTheTest.baseUrl;
     }
 }
