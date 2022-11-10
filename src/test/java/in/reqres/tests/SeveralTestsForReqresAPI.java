@@ -107,7 +107,7 @@ public class SeveralTestsForReqresAPI extends BaseTest {
     @Tag("reqres")
     @Owner("Loarlam")
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Создаёт юзера, затем удаляем информацию по юзеру /api/users/{id юзера}")
+    @DisplayName("Создаёт юзера, затем удаляем юзерау")
     @Description("Создаёт юзера, затем удаляем информацию по юзеру /api/users/{id юзера}")
     void deletingUserWithSpec() {
         CreateUserBodyLombokModel createUserBodyLombokModel = new CreateUserBodyLombokModel();
