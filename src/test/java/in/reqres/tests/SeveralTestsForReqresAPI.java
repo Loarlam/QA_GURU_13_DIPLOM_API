@@ -6,6 +6,7 @@ import in.reqres.models.lombok.UpdateUserBodyLombokModel;
 import in.reqres.models.lombok.UpdateUserResponseLombokModel;
 import in.reqres.models.pojo.CreateUserBodyPOJOModel;
 import in.reqres.models.pojo.CreateUserResponsePOJOModel;
+import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -32,7 +33,8 @@ public class SeveralTestsForReqresAPI extends BaseTest {
     @Tag("reqres")
     @Owner("Loarlam")
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Создает нового юзера методом /api/users с POJO моделью и проверяет параметры ответа созданного юзера")
+    @DisplayName("Создает нового юзера")
+    @Description("Создает нового юзера методом /api/users с POJO моделью и проверяет параметры ответа созданного юзера")
     void creatingUserWithPOJO() {
         CreateUserBodyPOJOModel createUserBodyPOJOModel = new CreateUserBodyPOJOModel();
         createUserBodyPOJOModel.setName(dataForTheTest.userName);
@@ -60,7 +62,8 @@ public class SeveralTestsForReqresAPI extends BaseTest {
     @Tag("reqres")
     @Owner("Loarlam")
     @Severity(SeverityLevel.TRIVIAL)
-    @DisplayName("Создаёт юзера, затем обновляет информацию по созданному юзеру методом /api/users/{id юзера} с Lombok моделью")
+    @DisplayName("Создаёт юзера, затем обновляет информацию юзеру")
+    @Description("Создаёт юзера, затем обновляет информацию по созданному юзеру методом /api/users/{id юзера} с Lombok моделью")
     void updatingUserInfoWithLombok() {
         CreateUserBodyLombokModel createUserBodyLombokModel = new CreateUserBodyLombokModel();
         createUserBodyLombokModel.setName(dataForTheTest.userName);
@@ -105,6 +108,7 @@ public class SeveralTestsForReqresAPI extends BaseTest {
     @Owner("Loarlam")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Создаёт юзера, затем удаляем информацию по юзеру /api/users/{id юзера}")
+    @Description("Создаёт юзера, затем удаляем информацию по юзеру /api/users/{id юзера}")
     void deletingUserWithSpec() {
         CreateUserBodyLombokModel createUserBodyLombokModel = new CreateUserBodyLombokModel();
         createUserBodyLombokModel.setName(dataForTheTest.userName);
